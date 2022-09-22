@@ -54,7 +54,7 @@ resetWriteBouton.grid(column=3, row=0, padx=5)
 # création et affichage de la zone de texte de nom de fichier
 saisie = Entry(tab2)
 saisie.grid(column=5, row=0, padx=10)
-label = Label(window, text="Bonjour les champions!", font = ( "Arial Bold" , 30 ))
+label = Label(window, text="Nom du fichier :", font = ( "Arial Bold" , 30 ))
 label.grid(column=4, row=0, padx=10)
 
 window.mainloop()
