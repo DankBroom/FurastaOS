@@ -11,9 +11,10 @@ def quitMsgbox():
 
 # lecture des fichiers (affichage dans un label ?)
 def read():
-    # demande du nom du fichier
-    # récupération du nom du fichier
-    fileContent = file.read(name)
+    afficher = saisie.get()
+    print(afficher)
+    fileContent = file.read(afficher)
+    print(fileContent)
 
 
 # création de la fenêtre
@@ -32,19 +33,28 @@ tab_control.pack(expand=1, fill='both')
 
 # création et affichage du boutton pour quitter
 quitBouton = Button( tab1 , text = "Stop FurastaOS", bg = "white" , fg = "black", command=quitMsgbox)
-quitBouton.grid(column=0, row=0)
+quitBouton.grid(column=0, row=0, padx=5)
 
 # création et affichage du boutton pour lire des fichiers
 readBouton = Button( tab2 , text = "Lire", bg = "blue" , fg = "black", command=read)
-readBouton.grid(column=0, row=0)
+readBouton.grid(column=0, row=0, padx=5)
 
+# création et affichage du boutton pour supprimer des fichiers
 deleteBouton = Button( tab2 , text = "Supprimer", bg = "red" , fg = "black", command=read)
-deleteBouton.grid(column=1, row=0)
+deleteBouton.grid(column=1, row=0, padx=5)
 
+# création et affichage du boutton pour écrire des fichiers
 writeBouton = Button( tab2 , text = "Ecrire", bg = "white" , fg = "black", command=read)
-writeBouton.grid(column=2, row=0)
+writeBouton.grid(column=2, row=0, padx=5)
 
+# création et affichage du boutton pour réécrire des fichiers
 resetWriteBouton = Button( tab2 , text = "Réécrire", bg = "black" , fg = "white", command=read)
-resetWriteBouton.grid(column=3, row=0)
+resetWriteBouton.grid(column=3, row=0, padx=5)
+
+# création et affichage de la zone de texte de nom de fichier
+saisie = Entry(tab2)
+saisie.grid(column=5, row=0, padx=10)
+label = Label(window, text="Bonjour les champions!", font = ( "Arial Bold" , 30 ))
+label.grid(column=4, row=0, padx=10)
 
 window.mainloop()
