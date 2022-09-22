@@ -3,7 +3,7 @@ from tkinter import messagebox
 from tkinter import ttk
 import file_gestion as file
 
-
+# création du message de confirmation de quit
 def quitMsgbox():
     quitQuestion = messagebox.askquestion ( 'FurastaOS' , 'Êtes vous sûr de vouloir quitter FurastaOS ?' )
     if quitQuestion == "yes":
@@ -12,9 +12,9 @@ def quitMsgbox():
 # lecture des fichiers (affichage dans un label ?)
 def read():
     afficher = saisie.get()
-    print(afficher)
     fileContent = file.read(afficher)
-    print(fileContent)
+    showLabel = Label(tab3, text=fileContent, font = ( "Arial" , 15 ))
+    showLabel.grid(column=4, row=0, padx=10)
 
 
 # création de la fenêtre
@@ -25,9 +25,11 @@ window.geometry ( '750x500' )
 tab_control = ttk.Notebook(window)
 tab1 = ttk.Frame(tab_control)
 tab2 = ttk.Frame(tab_control)
+tab3 = ttk.Frame(tab_control)
 
 tab_control.add(tab1, text='Main')
 tab_control.add(tab2, text='FilesGestion')
+tab_control.add(tab3, text='FilesController')
 
 tab_control.pack(expand=1, fill='both')
 
@@ -51,10 +53,10 @@ writeBouton.grid(column=2, row=0, padx=5)
 resetWriteBouton = Button( tab2 , text = "Réécrire", bg = "black" , fg = "white", command=read)
 resetWriteBouton.grid(column=3, row=0, padx=5)
 
-# création et affichage de la zone de texte de nom de fichier
+# création et affichage de la zone de texte de nom de fichier et de son label
+fileName = Label(tab2, text="Nom du fichier :", font = ( "Arial Bold" , 15 ))
+fileName.grid(column=4, row=0, padx=10)
 saisie = Entry(tab2)
 saisie.grid(column=5, row=0, padx=10)
-label = Label(window, text="Nom du fichier :", font = ( "Arial Bold" , 30 ))
-label.grid(column=4, row=0, padx=10)
 
 window.mainloop()
