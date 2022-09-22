@@ -1,3 +1,10 @@
+# -------------------------------------------------------
+# by : DankBroom228555
+# created the 21/09/2022
+# graphics file of : FurastaOS, main.py
+# -------------------------------------------------------
+
+
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
@@ -60,3 +67,4 @@ saisie = Entry(tab2)
 saisie.grid(column=5, row=0, padx=10)
 
 window.mainloop()
+read()

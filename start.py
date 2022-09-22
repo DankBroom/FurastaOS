@@ -1,7 +1,7 @@
 # -------------------------------------------------------
 # by : DankBroom228555
 # created the 21/09/2022
-# sttart file of : FurastaOS, main.py
+# start file of : FurastaOS, main.py
 # -------------------------------------------------------
 
 # furasta = facile en Gaélique (langue de l'écosse)
@@ -11,7 +11,7 @@ import main as OS
 def start(name, password):
     if name == "admin":
         if password == "lemotdepasse":
-            print("[FurastaOS/dankbroom] >> bonjour " + name)
+            print("[FurastaOS/admin] >> bonjour " + name)
             OS.good_password()
     else:
         print("[FurastaOS/info] >> Nom d'utilisateur ou mot de passe incorrect")

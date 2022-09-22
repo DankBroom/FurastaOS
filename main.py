@@ -10,14 +10,14 @@ import help as helpFile
 
 def good_password():
     while True:
-        cmd = input("[FurastaOS/dankbroom] >> ")
+        cmd = input("[FurastaOS/admin] >> ")
         if cmd == "ping":
-            print("[FurastaOS/dankbroom/info] >> os non connecté à internet")
+            print("[FurastaOS/info] >> os non connecté à internet")
         elif cmd == "exit" or cmd == "quit":
             print("[FurastaOS/unlogin] >> os arrêté avec succès !")
             break
         elif cmd == "execute":
-            print("[FurastaOS/dankbroom/execute/info] >> Entrez le nom du programme à executer")
+            print("[FurastaOS/admin/execute/info] >> Entrez le nom du programme à executer")
             executable.start(input("[FurastaOS/dankbroom/execute] >> "))
         elif cmd == "open":
             print("[FurastaOS/info] >> Entrez le nom du fichier à ouvrir")
