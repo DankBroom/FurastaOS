@@ -32,7 +32,7 @@ def create(file_name):
     if os.path.exists("personalFiles/" + file_name):
         print("[FurastaOS/error] >> Le fichier existe déjà !")
     else:
-        file = open("personalFiles/" + file_name,"w+")
+        open("personalFiles/" + file_name,"w+")
         print("[FurastaOS/info] >> Fichier créé avec succès !")
 
 def reset_write(file_name):

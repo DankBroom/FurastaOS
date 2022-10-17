@@ -23,6 +23,19 @@ def read():
     showLabel = Label(tab3, text=fileContent, font = ( "Arial" , 15 ))
     showLabel.grid(column=4, row=0, padx=10)
 
+# supprimmer les fichiers (validation dans un label ?)
+def delete():
+    afficher = saisie.get()
+    file.delete(afficher)
+    showLabel = Label(tab3, text="Le fichier à bien été supprimé !", font = ( "Arial" , 15 ))
+    showLabel.grid(column=4, row=0, padx=10)
+
+def create():
+    afficher = saisie.get()
+    file.create(afficher)
+    showLabel = Label(tab3, text="Le fichier à bien été créé !", font = ( "Arial" , 15 ))
+    showLabel.grid(column=4, row=0, padx=10)
+
 
 # création de la fenêtre
 window = Tk()
@@ -49,7 +62,7 @@ readBouton = Button( tab2 , text = "Lire", bg = "blue" , fg = "black", command=r
 readBouton.grid(column=0, row=0, padx=5)
 
 # création et affichage du boutton pour supprimer des fichiers
-deleteBouton = Button( tab2 , text = "Supprimer", bg = "red" , fg = "black", command=read)
+deleteBouton = Button( tab2 , text = "Supprimer", bg = "red" , fg = "black", command=delete)
 deleteBouton.grid(column=1, row=0, padx=5)
 
 # création et affichage du boutton pour écrire des fichiers
@@ -60,11 +73,22 @@ writeBouton.grid(column=2, row=0, padx=5)
 resetWriteBouton = Button( tab2 , text = "Réécrire", bg = "black" , fg = "white", command=read)
 resetWriteBouton.grid(column=3, row=0, padx=5)
 
+# création et affichage du boutton pour créer des fichiers
+readBouton = Button( tab2 , text = "Créer", bg = "purple" , fg = "black", command=create)
+readBouton.grid(column=4, row=0, padx=5)
+
 # création et affichage de la zone de texte de nom de fichier et de son label
 fileName = Label(tab2, text="Nom du fichier :", font = ( "Arial Bold" , 15 ))
-fileName.grid(column=4, row=0, padx=10)
+fileName.grid(column=5, row=0, padx=10)
 saisie = Entry(tab2)
-saisie.grid(column=5, row=0, padx=10)
+saisie.grid(column=6, row=0, padx=10)
+
+# création et affichage de la zone de texte de modif de fichiers et de son label
+fileName = Label(tab2, text="Texte du fichier :", font = ( "Arial Bold" , 15 ))
+fileName.grid(column=5, row=1, padx=10)
+saisie = Entry(tab2)
+saisie.grid(column=6, row=1, padx=10)
+
 
 window.mainloop()
 read()
